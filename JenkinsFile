@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+    
+    stages {
+       
+        
+        stage('Build') {
+            steps {
+                // Build your Spring project using Maven
+                bat 'mvn clean package'
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                // Run tests using Maven
+                bat 'mvn test'
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                // Deployment steps (e.g., deploying to a server)
+                // This may vary based on your deployment strategy
+                // Example: deploying to Tomcat
+               echo "deployed"
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo 'Congratulations! Your Spring project build succeeded!'
+        }
+        
+        
