@@ -2,8 +2,6 @@ pipeline {
     agent any
     
     stages {
-       
-        
         stage('Build') {
             steps {
                 // Build your Spring project using Maven
@@ -23,14 +21,8 @@ pipeline {
                 // Deployment steps (e.g., deploying to a server)
                 // This may vary based on your deployment strategy
                 // Example: deploying to Tomcat
-               echo "deployed"
+                echo "Deployed"
             }
         }
     }
-    
-    post {
-        success {
-            echo 'Congratulations! Your Spring project build succeeded!'
-        }
-        
-        
+}
