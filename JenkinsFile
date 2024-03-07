@@ -20,11 +20,11 @@ pipeline {
             steps {
                 // Run SonarScanner analysis
                 withSonarQubeEnv('sq2') {
-    mvn clean verify sonar:sonar \
+  mvn clean verify sonar:sonar \
   -Dsonar.projectKey=test \
   -Dsonar.projectName='test' \
   -Dsonar.host.url=http://localhost:9000 \
-  -Dsonar.token=sqp_43e7b91bd2312a99db3d6118819a579d746fd71e
+  -Dsonar.token=sqp_30f9f98fc657685b0f5f84f53e7ab18ad865d681
                 }
             }
         }
