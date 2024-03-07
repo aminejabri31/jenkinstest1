@@ -20,7 +20,8 @@ pipeline {
             steps {
                 // Run SonarScanner analysis
                 withSonarQubeEnv('sq2') {
- 
+                    bat 'mvn sonar:sonar'
+                }
             }
         }
         
