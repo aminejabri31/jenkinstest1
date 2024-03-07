@@ -16,6 +16,15 @@ pipeline {
             }
         }
         
+        stage('SonarQube Analysis') {
+            steps {
+                // Run SonarScanner analysis
+                withSonarQubeEnv('sq2') {
+                    bat 'mvn sonar:sonar'
+                }
+            }
+        }
+        
         stage('Deploy') {
             steps {
                 // Deployment steps (e.g., deploying to a server)
